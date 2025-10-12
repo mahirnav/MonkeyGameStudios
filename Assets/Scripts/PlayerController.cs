@@ -1,8 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 0;
+
     private Rigidbody rb;
     private float movementX;
     private float movementY;
@@ -25,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
 
-        rb.AddForce(movement);
+        rb.AddForce(movement * speed);
     }
 
 }
