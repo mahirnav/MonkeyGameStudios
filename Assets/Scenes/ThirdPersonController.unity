@@ -246,6 +246,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!20 &2005192319 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5922398861882709420, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+  m_PrefabInstance: {fileID: 2921747310292161528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2066320139
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,13 +352,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1782488586933674988, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+      propertyPath: drag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782488586933674988, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+      propertyPath: _playerCamera
+      value: 
+      objectReference: {fileID: 2005192319}
+    - target: {fileID: 1782488586933674988, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+      propertyPath: runAcceleration
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782488586933674988, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+      propertyPath: _characterController
+      value: 
+      objectReference: {fileID: 4540229000217709776}
     - target: {fileID: 3743134181392689185, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.11483
       objectReference: {fileID: 0}
     - target: {fileID: 3743134181392689185, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.101
       objectReference: {fileID: 0}
     - target: {fileID: 3743134181392689185, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -387,6 +408,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6657157672823468597, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.209
+      objectReference: {fileID: 0}
     - target: {fileID: 8808800314224961504, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
@@ -396,6 +421,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+--- !u!143 &4540229000217709776 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6442088354016020688, guid: e6d059d58c6a1fb41ad536db6be250a1, type: 3}
+  m_PrefabInstance: {fileID: 2921747310292161528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
