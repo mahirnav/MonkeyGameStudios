@@ -7,6 +7,7 @@ public class PlayerLocomotionInput : MonoBehaviour , PlayerControls.IPlayerLocom
     public PlayerControls PlayerControls {  get; private set; }
 
     public Vector2 MovementInput {  get; private set; }
+    public Vector2 LookInput { get; private set; }
 
     private void OnEnable()
     {
@@ -28,5 +29,10 @@ public class PlayerLocomotionInput : MonoBehaviour , PlayerControls.IPlayerLocom
         MovementInput = context.ReadValue<Vector2>();
         print(MovementInput);
 
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        LookInput = context.ReadValue<Vector2>();
     }
 }
