@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Door : MonoBehaviour
 {
@@ -10,18 +10,18 @@ public class Door : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
+        if(other.CompareTag("Player Cam"))
         {
-            if (opened == false)
+            if(opened == false)
             {
                 intText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                if(Input.GetKeyDown(KeyCode.E))
                 {
                     door_closed.SetActive(false);
                     door_opened.SetActive(true);
                     intText.SetActive(false);
                     //open.Play();
-                    StartCoroutine(repeat());
+                    StartCoroutine(Repeat());
                     opened = true;
                 }
             }
@@ -30,13 +30,13 @@ public class Door : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
+        if(other.CompareTag("Player Cam"))
         {
             intText.SetActive(false);
         }
     }
 
-    IEnumerator repeat()
+    IEnumerator Repeat()
     {
         yield return new WaitForSeconds(4.0f);
         opened = false;
