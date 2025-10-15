@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
   _animator: {fileID: 1733976743}
+  locomotionBlendSpeed: 2
 --- !u!114 &1733976746
 MonoBehaviour:
   m_ObjectHideFlags: 0
