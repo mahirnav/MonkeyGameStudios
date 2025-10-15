@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Animator _animator;
+
+    private PlayerLocomotionInput _playerLocomotionInput;
+
+    private static int inputXHash = Animator.StringToHash("inputX");
+    private static int inputYHash = Animator.StringToHash("inputY");
+
+    private void Awake()
     {
-        
+        _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        UpdateAnimationState();
+    }
+
+    private void UpdateAnimationState()
+    {
+        Vector2 inputTarget = _playerLocomotionInput.MovementInput;
+
+        _animator.SetFloat(inputXHash, inputTarget.x);
+        _animator.SetFloat(inputYHash, inputTarget.y);
     }
 }
