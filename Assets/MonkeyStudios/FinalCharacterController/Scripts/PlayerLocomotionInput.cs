@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerLocomotionInput : MonoBehaviour , PlayerControls.IPlayerLocomotionMapActions
 {
+    [SerializeField] private bool holdToSpring = true;
+    public bool SprintToggleOn {  get; private set; }
     public PlayerControls PlayerControls {  get; private set; }
-
     public Vector2 MovementInput {  get; private set; }
     public Vector2 LookInput { get; private set; }
 
@@ -34,5 +35,13 @@ public class PlayerLocomotionInput : MonoBehaviour , PlayerControls.IPlayerLocom
     public void OnLook(InputAction.CallbackContext context)
     {
         LookInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnToggleSprint(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SprintToggleOn = holdToSpring || !SprintToggleOn;
+        }
     }
 }
