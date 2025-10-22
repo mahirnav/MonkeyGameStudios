@@ -43,5 +43,10 @@ public class PlayerLocomotionInput : MonoBehaviour , PlayerControls.IPlayerLocom
         {
             SprintToggleOn = holdToSpring || !SprintToggleOn;
         }
+        else if (context.canceled)
+        {
+            SprintToggleOn = !holdToSpring && SprintToggleOn;
+        }
+
     }
 }
