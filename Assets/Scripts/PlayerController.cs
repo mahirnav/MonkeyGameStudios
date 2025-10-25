@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    public float startSpeed;
+    public float boostSpeed = 1.5f;
+    public float boostTimer = 5f;
+    public float boostEnd = -.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +28,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         SetCountText();
         winTextObject.SetActive(false);
+        startSpeed = speed;
     }
 
     void OnMove(InputValue movementValue)
