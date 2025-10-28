@@ -7,7 +7,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0;
+    public float speed = 10f;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
 
@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    public float startSpeed;
-    public float boostSpeed = 1.5f;
+    public float boostSpeed = 30f;
     public float boostTimer = 5f;
     public float boostEnd = -.5f;
 
@@ -28,7 +27,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         SetCountText();
         winTextObject.SetActive(false);
-        startSpeed = speed;
     }
 
     void OnMove(InputValue movementValue)
@@ -63,6 +61,12 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
 
             SetCountText();
+        }
+
+        if (other.gameObject.CompareTag("SpeedBoost"))
+        {
+            speed = boostSpeed;
+            other.gameObject.SetActive(false);
         }
     }
 
